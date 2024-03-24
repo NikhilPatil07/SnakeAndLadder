@@ -1,10 +1,9 @@
 package com.infogalaxy.snakeandladder;
 
-import java.security.PublicKey;
+
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.management.loading.PrivateClassLoader;
 
 public class SnakeAndLadder
 {
@@ -20,6 +19,8 @@ public class SnakeAndLadder
 		
 		public void show()
 		{
+			while (playerPosition != 100)
+			{
 			System.out.println(" Position of a Player is : " +playerPosition);
 			dieNo = random.nextInt(6) + 1;
 			option = random.nextInt(3);
@@ -42,8 +43,9 @@ public class SnakeAndLadder
 			}
 			System.out.println(" The Value of a Option is = "+option);
 			System.out.println(" The Number on Die is = "+dieNo);
-			System.out.println(" The New Position of a Player = "+playerPosition);
+			System.out.println(" The New Position of a Player = " +playerPosition);   
 			
+			}
 		}
 		public static void main(String[] args)
 		{
@@ -52,4 +54,5 @@ public class SnakeAndLadder
 			
 		}
 
+		
 }
