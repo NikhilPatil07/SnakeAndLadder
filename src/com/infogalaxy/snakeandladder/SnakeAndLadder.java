@@ -13,6 +13,7 @@ public class SnakeAndLadder
 		int playerPosition = 0;
 		int option;
 		int dieNo;
+		int dieCount = 0;
 		private static final int STAY = 0;
 		private static final int LADDER = 1;
 		private static final int SNAKE = 2;
@@ -24,6 +25,7 @@ public class SnakeAndLadder
 			{
 			System.out.println(" Position of a Player is : " +playerPosition);
 			dieNo = random.nextInt(6) + 1;
+			dieCount++;
 			option = random.nextInt(3);
 			
 			switch (option)
@@ -32,6 +34,10 @@ public class SnakeAndLadder
 					playerPosition = playerPosition;
 					break;
 				case LADDER:
+					if(playerPosition +dieNo > WINNING_NO) 
+					{
+						continue;
+					}
 					playerPosition = playerPosition + dieNo;
 					break;
 				case SNAKE:
@@ -44,7 +50,8 @@ public class SnakeAndLadder
 			}
 			System.out.println(" The Value of a Option is = "+option);
 			System.out.println(" The Number on Die is = "+dieNo);
-			System.out.println(" The New Position of a Player = " +playerPosition);   
+			System.out.println(" The New Position of a Player = " +playerPosition); 
+			System.out.println(" The Total Die Required to Win the Game is = " +dieCount);
 			
 			}
 		}
